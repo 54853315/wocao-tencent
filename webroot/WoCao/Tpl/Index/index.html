@@ -1,0 +1,52 @@
+<h1>卧槽腾讯微博</h1>
+
+一个晚上做出来的所以没有界面..稍后会丰富。
+<h2>作者：konakona </h2>
+<p>网站：http://www.crazyphper.com</p>
+<p>微博：http://t.qq.com/crazyphper</p>
+
+
+<h4>灵感起源：<a href="http://wocao123.sinaapp.com">新浪卧槽</a></h4>
+
+<?php if(!$isOAuth):?>
+请先<a href="{:U('login')}">登录</a>你的微博。
+<?php else:?>
+<br/>
+
+<h2 style="color:red">{$user.data.nick}</h2>
+<h3>一共有{$user.data.tweetnum}条微博可以被卧槽哟！</h3>
+<h3>目前腾讯指数为:</h3>
+读请求：每小时20000次（获取公共时间轴/首页时间轴等）<br/>
+写请求：每小时10000次（发表微博/收听/取消收听）<br/>
+<font color="red">
+目前腾讯微博的API是比较变态的，想要时间范围和区间删除，需要大量的对比，本人最近建立公司阶段没有太多时间完善。
+感兴趣的朋友可以找我要源码（托管在oschina）
+</font>
+<br/>
+
+================================================================================
+<!--
+<form action="run" method="post">
+<br/>
+开始日期：<input type="text" name="start_date" value="<?php echo date("Y-m-d",strtotime("-1 day"));?>"/> （例：2014-02-12）
+<br/>
+结束日期：<input type="text" name="end_date" value="<?php echo date("Y-m-d");?>"/> （例：2014-02-12）
+<br/>
+ 排除关键词：<input type="text" name="out_keywords" value="区间"/> （用英文逗号区分，例：小伙伴,基友） 
+<br/>
+只删除： 原创微博<input type="checkbox" name="type" value="0x1" /> | 转播<input type="checkbox" name="type" value="0x2" />
+
+<br/>
+<input type="submit" value="立即执行">
+</form>
+-->
+
+================================================================================
+
+<ul>
+	<li>
+		<a href="{:U('index/run')}">删除所有微博！</a>
+	</li>
+</ul>
+
+<?php endif;?>
